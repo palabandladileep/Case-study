@@ -1,4 +1,11 @@
-from dao.taskdao import create_task
-from service.task import *
-t = Task()
-create_task(t)
+from service import task
+from dao import taskdao
+from prettytable import PrettyTable
+
+while(1):
+    x=taskdao.takeinput()
+    if(x):
+        taskdao.run(x)
+    else:
+        break
+print("Exiting.....\nAll changes are commited successfully..")
